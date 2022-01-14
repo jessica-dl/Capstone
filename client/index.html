@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta name="description" content="Sample results from scanning QR code">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>JHE 251</h1>
+        <div>
+            <table>
+                <!--Table which displays booking information and buttons to book a room at the specific time-->
+                <tr>
+                    <th>Time</th>
+                    <th>Availability</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td>8:30 am</td>
+                    <td>Available</td>
+                    <td>
+                        <button name="book" onClick="bookTheRoom();">Book</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9:30 am</td>
+                    <td>Booked</td>
+                    <td>
+                        <button name="cancel" onClick="CancelTheBooking();">Cancel booking</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10:30 am</td>
+                    <td>Booked</td>
+                    <td>
+                        <button name="cancel" onClick="CancelTheBooking();">Cancel booking</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>11:30 am</td>
+                    <td>Available</td>
+                    <td>
+                        <button name="book" onClick="bookTheRoom();">Book</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>12:30 pm</td>
+                    <td>Booked</td>
+                    <td>
+                        <button name="cancel" onClick="CancelTheBooking();">Cancel booking</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1:30 pm</td>
+                    <td>Booked</td>
+                    <td>
+                        <button name="cancel" onClick="CancelTheBooking();">Cancel booking</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
