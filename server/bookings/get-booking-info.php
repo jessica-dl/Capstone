@@ -7,10 +7,7 @@ $db = $database->getConnection();
 
 if ($_POST['arguments'][0] != "") {
     $building = $_POST['arguments'][0];
-    $room = $_POST['arguments'][1];
-    //$building_stmt = "SELECT `id`, `name` FROM `buildings` WHERE `name` LIKE '%$building%'"; 
-    //$room_stmt = "SELECT `id`, `name` FROM '%$building%'"; 
-    $room_stmt = "SELECT `id`, `name` FROM JHE"; 
+    $room_stmt = "SELECT `id`, `name` FROM " . $building; 
 }
 
 if ($db['status'] == '0') {
@@ -24,8 +21,8 @@ if ($db['status'] == '0') {
         $i = 0;
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            $jsonRow["Name"] = $row["name"];
-            $jsonRow["Availability"] = $row["availability"];
+            $jsonRow["id"] = $row["id"];
+            $jsonRow["name"] = $row["name"];
             $data[strval($i)] = json_encode($jsonRow);
             $i++;
         } 

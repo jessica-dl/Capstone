@@ -10,18 +10,18 @@ var showresult =  function(){
          }
     var nowDate = date.getFullYear() + "-" + nowMonth + "-" + strDate;
     
-    //after calender is availiable, need to get the date data otherwise use current date to use in database.
+    // after calender is availiable, need to get the date data otherwise use current date to use in database.
 
     let building = $('#building').val();
 
     $.ajax({
-            type:"GET",
-            url:"../../server/bookings/get-booking-info.php",
-            data: {"buildingname": building},
+            type: "GET",
+            url: "../../server/bookings/get-booking-info.php",
+            data: {"arguments": building},
             dataType: "html",
-            async : false,
-            success:function(result){
-                    createTable(result);  
+            async: false,
+            success : function(result){
+                        createTable(result);  
                     }
 
             })
