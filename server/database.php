@@ -9,15 +9,17 @@ class Database {
 
 
     public function getConnection() {
-        $this->conn = new mysqli($this->host, $this->username, $this->password, $this->db_name);
-
-        if($this->conn->connect_error) {
-            $response['status'] = '0';
-            $response['message'] = $this->conn->connect_error;
-            return $response;
-        } else {
+        try {
+            $this->conn = new mysqli($this->host, $this->username, $this->password, $this->db_name);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            //status = '1' for connect to the database properly status = '0' for connect to the databse failed
             $response['status'] = '1';
             $response['connection'] = $this->conn;
+            return $response;
+         } catch (PDOException $e) {
+            $response['status'] = '0';
+            $response['message'] = $e->getMessage();
             return $response;
         }
     }

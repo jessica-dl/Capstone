@@ -1,0 +1,64 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#header {
+  background-color: rgba(196, 186, 186, 0.445);
+  height: 140px;
+}
+#h_search {
+  background-color: rgba(167, 32, 32, 0.445);
+  height: 60px;
+  margin-bottom: 20px;
+}
+#mainbody {
+  border-top: solid 1px black;
+  height: 74%;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+h1{
+  margin: 0;
+}
+
+#datesearch{
+  float: left;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 10px;
+}
+
+#roomsearch{
+  overflow: hidden;
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 10px;
+}
+
+#roomtable{
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.timetable {
+  width: auto;
+  border: 1px solid black;
+}
+
+th {
+  text-align: center;
+  font-size: 200%;
+  border: 1px solid black;
+}
+
+td {
+  text-align: center;
+  border: 1px solid black;
+}
