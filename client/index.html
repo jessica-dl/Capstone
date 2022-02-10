@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="UTF-8">
-        <meta name="description" content="Sample results from scanning QR code">
+<html>
+  <head>
+    <title>Proximity</title>
+    <link href="css/main.css"rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="homepage.js"></script>
+  </head>
+  <body>
+    <div id='container'>
+      <div class="select">
+        <select id="selectbuilding" onchange="showMarker()">
+          <option value="">--Building List--</option>
+          <option value="JHE">John Hodgins Engineering Building</option>
+          <option value="BSB">Burke Science Building</option>
+        </select>
+      </div>  
+      <button id="login" type="submit">Login</button>
+    </div>
 
-        <link rel="stylesheet" href="style.css">
-    </head>
 
+
+    <div id='map-canvas'></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT5sQFSQWfpRx7wxo8272u61gvvT14FtE&callback=initMap"></script>
 </html>
