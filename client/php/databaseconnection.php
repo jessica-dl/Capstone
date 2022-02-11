@@ -4,7 +4,7 @@ class Database
     private $servername = "localhost";
     private $dbName = "capstone";
     private $username = "root";
-    private $password = "Nicksuper1!";
+    private $password = "password";
     public $conn;
 
     public function getConnection(){
