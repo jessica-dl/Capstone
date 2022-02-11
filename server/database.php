@@ -4,7 +4,7 @@ class Database {
     private $host = "localhost";
     private $db_name = "capstone";
     private $username = "root";
-    private $password = "";
+    private $password = "password";
     public $conn;
 
 
