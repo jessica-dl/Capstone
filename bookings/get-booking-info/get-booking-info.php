@@ -1,6 +1,6 @@
 <?php
 
-include_once '../database.php';
+include_once '../../database.php';
 
 $database = new Database();
 $db = $database->getConnection();
@@ -20,7 +20,7 @@ if ($_GET['building'] != null) {
         $request->execute();
 
         while ($row = $request->fetch(PDO::FETCH_ASSOC)) {
-            $jsonRow["id"] = $row["id"];
+            $jsonRow["id"] = $row["roomID"];
             $jsonRow["name"] = $row["name"];
             $data[strval($i)] = json_encode($jsonRow);
             $i++;

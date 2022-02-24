@@ -21,6 +21,7 @@ var showresult =  function() {
         data: {"building": building},
         async: false,
         success : function(result) {  
+            console.log(result);
             createTable(JSON.parse(result));  
         }
     })
@@ -47,7 +48,7 @@ window.onload=function(){
 
 function createTable(data) {   
     data = JSON.parse(data["response_data"]);
-    var timetable = "<table class='timetable'>";  
+    var timetable = "<table class='container'>";  
     timetable = timetable  
             + "<tr>"  
             +"<th>Room</th>" 

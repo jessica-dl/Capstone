@@ -12,7 +12,7 @@
     } else {
         try {
             $conn = $db['connection'];
-            $query = "select * from buildings where name ='$building' ";
+            $query = "select * from capstone.buildings where name = '$building' ";
             $request = $conn->prepare($query);
             $request->execute();
             while($row =$request->fetch(PDO::FETCH_ASSOC)){
