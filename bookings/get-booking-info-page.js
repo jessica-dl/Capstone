@@ -17,7 +17,7 @@ var showresult =  function() {
 
     $.ajax({
         type: "GET",
-        url: "../../server/bookings/get-booking-info.php",
+        url: "get-booking-info.php",
         data: {"building": [building]},
         async: false,
         success : function(result) {  

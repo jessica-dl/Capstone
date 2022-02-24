@@ -1,15 +1,15 @@
 <?php 
-    //Database class for connect to the database
-    include_once 'databaseconnection.php';
+    // Database class for connect to the database
+    include_once './database.php';
     
     $building = $_GET["building"];
     $i = 0;
-    //Connect to database by using PDO
+    // Connect to database by using PDO
     $database = new Database();
     $db = $database->getConnection();
-    if($db['status'] == '0'){
+    if ($db['status'] == '0') {
         echo "Connection to database failed: " . $db['message'];
-    }else{
+    } else {
         try {
             $conn = $db['connection'];
             $query = "select * from buildings where name ='$building' ";

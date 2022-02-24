@@ -19,7 +19,7 @@ function showMarker(){
     var data ='';
     $.ajax({
          type:"GET",
-         url:"php/addmarker.php",
+         url:"map/addmarker.php",
          data: {"building":building},
          dataType: "html",
          async : false,
