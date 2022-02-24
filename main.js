@@ -35,7 +35,7 @@ function showMarker(){
         var buildingname = data[i].name;
         markers [i] = new google.maps.Marker({
             map: map,
-            url: "http://3.21.69.46/Capstone/client/bookings/get-booking-info-page.html"
+            url: "jeffgibson.live/Capstone/client/bookings/get-booking-info-page.html?name=" + buildingname
         });
         var la = data[i].latitude;
         var lo = data[i].longitude;

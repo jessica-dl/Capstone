@@ -1,6 +1,6 @@
 <?php 
     // Database class for connect to the database
-    include_once './database.php';
+    include_once '../database.php';
     
     $building = $_GET["building"];
     $i = 0;

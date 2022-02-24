@@ -10,7 +10,7 @@ if ($db['status'] == '0') {
 }
 
 if ($_GET['building'] != null) {
-    $building = $_GET['building'][0];
+    $building = $_GET['building'];
     $stmt = "SELECT * FROM capstone." . $building;     
 
     try {

@@ -18,7 +18,7 @@ var showresult =  function() {
     $.ajax({
         type: "GET",
         url: "get-booking-info.php",
-        data: {"building": [building]},
+        data: {"building": building},
         async: false,
         success : function(result) {  
             createTable(JSON.parse(result));  
