@@ -1,6 +1,6 @@
 <?php
 
-include_once '../database.php';
+include_once '../../database.php';
 
 $database = new Database();
 $db = $database->getConnection();
@@ -9,9 +9,10 @@ if ($db['status'] == '0') {
     die("Connection failed:" . $db['message']);
 }
 
-if ($_GET['building'] != null) {
-    $building = $_GET['building'][0];
-    $stmt = "SELECT * FROM capstone." . $building;     
+if ($_GET['arguments'] != null) {
+    $building = $_GET['arguments'][0];
+    $room = $_GET['arguments'][1];
+    $stmt = "SELECT * FROM capstone.booked WHERE `roomID`=" . $room . " AND `buildingName`=" . $building;     
 
     try {
         $i = 0;
@@ -20,8 +21,9 @@ if ($_GET['building'] != null) {
         $request->execute();
 
         while ($row = $request->fetch(PDO::FETCH_ASSOC)) {
-            $jsonRow["id"] = $row["id"];
-            $jsonRow["name"] = $row["name"];
+            $jsonRow["id"] = $row["roomID"];
+            $jsonRow["name"] = $row["buildingName"];
+            $jsonRow["times"] = $row["time"];
             $data[strval($i)] = json_encode($jsonRow);
             $i++;
         } 
@@ -43,7 +45,7 @@ if ($_GET['building'] != null) {
     $response_status = '2';
     $response_code = 400;
     $response_desc = "Input not received";
-    $response_data = $_GET['building'];
+    $response_data = $_GET['arguments'];
     
     $response['response_status'] = $response_status;
     $response['response_code'] = $response_code;

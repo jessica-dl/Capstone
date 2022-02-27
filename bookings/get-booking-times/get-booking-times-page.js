@@ -1,26 +1,24 @@
-var showresult =  function() {
+var building = sessionStorage.getItem("building");
+var room = sessionStorage.getItem("room");
+
+var showresult = function() {
     var date = new Date();
     var nowMonth = date.getMonth() + 1;
     var strDate = date.getDate();
     if (nowMonth >= 1 && nowMonth <= 9) {
-            nowMonth = "0" + nowMonth;
-         }
+        nowMonth = "0" + nowMonth;
+    }
     if (strDate >= 0 && strDate <= 9) {
-            strDate = "0" + strDate;
-         }
-    var nowDate = date.getFullYear() + "-" + nowMonth + "-" + strDate;
-    
-    // after calender is available, need to get the date data otherwise use current date to use in database.
-
-    // let building = $('#building').val();
-    let building = 'JHE';
+        strDate = "0" + strDate;
+    }
 
     $.ajax({
         type: "GET",
-        url: "get-booking-info.php",
-        data: {"building": [building]},
+        url: "get-booking-times.php",
+        data: {"arguments": [building, room]},
         async: false,
-        success : function(result) {  
+        success : function(result) {
+            console.log(result);
             createTable(JSON.parse(result));  
         }
     })
@@ -41,26 +39,26 @@ function currentdate() {
 }
 **/
 
-window.onload=function(){
+window.onload=function() {
     showresult();
 }
 
 function createTable(data) {   
     data = JSON.parse(data["response_data"]);
-    var timetable = "<table class='timetable'>";  
+    var timetable = "<table class='table'>";  
     timetable = timetable  
-            + "<tr>"  
-            +"<th>Room</th>" 
-            +"<th></th>"    
-            +"</tr>";  
+            + "<thead> <tr>"  
+            + "<th scope='col'>Room</th>" 
+            + "<th scope='col'>Times</th>"    
+            + "</tr> </thead>";  
     var len = data.length;  
     for (var i = 0; i < len; i++) {  
         row = JSON.parse(data[i]);
         console.log(row);
         timetable = timetable + "<tr>"  
-            +"<td>"+ row["name"] + "</td>"  
-            +"<td><input type='button' value='Book Room'></td>"  
-            +"</tr>";  
+            + "<td>"+ row["name"] + "</td>"  
+            + "<td></td>"  
+            + "</tr>";  
     }  
     timetable = timetable + "</table>";  
     $("#roomtable").html(timetable);
