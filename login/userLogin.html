@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content="Sign in or sign up to the website">
+
+	<!--- Bootstrap style sheet  and custom CSS --->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="user-registration-page.css">
+	<script type="text/javascript" src="../css/loginPage.css"></script>
+	<!--- Header styling --->
+    <style>
+        .jumbotron {
+          background-image: url("../assets/pourover-home-coffee.jpg");
+          background-size: cover;
+          background-color: #345995;
+          color: #000;
+          border-radius: 5px;
+          margin-bottom: 1%;
+        }
+        </style>
+
+	<!--- Title appears in tab bar on browser --->
+    <title>Sign up/Sign in</title>
+    <meta name="author" content="Jessica de Leeuw">
+</head>
+
+<body>
+	<!--- Bootstrap styling --->
+    <div class="jumbotron text-center">
+        <h1></h1>
+	<!--- Creates nav bar with links --->
+    <div class="topnav"> 
+        <a href="../index.html">Home</a>
+        <a href="user-registration-page.html#signin" style="float: right;">Sign in</a>
+        <a class="active" href="user-registration-page.html#signup" style="float: right;">Sign up</a>
+		<a href="user-registration-page.html#signout" style="float: right;">Sign out</a>
+      </div>
+	</div>
+
+
+	<div class="container" id="signup">
+		<h2>
+			Sign up
+		</h2>
+
+		<form id="signup-form" autocomplete="off" class="form-signin needs-validation"> <!--- Creates a form, each of these are input boxes for the user to enter answers --->
+			<label for="fname" aria-placeholder="First Name"></label><br>
+			<input type="text" id="fname" name="fname" placeholder="First Name" style="text-align: center;"><br>
+
+			<label for="lname" aria-placeholder="Last Name"></label><br>
+			<input type="text" id="lname" name="lname" placeholder="Last Name" style="text-align: center;"><br>
+
+			<label for="bday" aria-placeholder="Birthday"></label><br>
+			<input type="date" id="bday" name="bday" placeholder="Birthday" style="text-align: center;"><br>
+
+			<label for="email" aria-placeholder="Email: abcd@example.com"></label><br>
+			<input type="email" id="email" name="email" placeholder="Email Address" style="text-align: center;"><br>
+			
+			<label for="spass" aria-placeholder="Password"></label><br>
+			<input type="password" id="spass" name="spass" placeholder="Password" style="text-align: center;"><br>
+
+			<label for="rpass" aria-placeholder="Please re-enter your password"></label><br>
+			<input type="password" id="rpass" name="rpass" placeholder="Re-enter your password" style="text-align: center;"><br>
+		  </form> 
+		  <br> 
+
+		<input type="checkbox" id="tos" name="tos" value="ToS"> <!--- Checkbox for user to click --->
+		<!--- terms-of-service is currently random, found online, just used for display purposes --->
+		<label for="tos">I agree to the <a href="../assets/terms-of-service.txt">Terms of Service</a></label> <!--- Links to terms of service --->
+		<br>
+
+		<!--- Button for the user to submit form, does not redirect as of now --->
+		<button class="form-submit" type="button" onclick="validateSignUp();">Register</button> 
+		<br>
+
+		<div id="alert-div" class="alert" style="display: none">
+		  Please fill out the required fields.
+		</div> 
+	</div>
+
+	<br>
+
+	<!--- Styled container --->
+	<div class="container" id="signin">
+		<!--- Heading in container --->
+		<h2>
+			Sign in
+		</h2>
+
+		<!--- Creates a form for the user to fill out --->
+		<form id="signin-form" autocomplete="off" class="form-signin needs-validation">
+			<label for="email-login" aria-placeholder="Email: abcd@example.com"></label><br>
+			<input type="email" id="email-login" name="email-login" placeholder="Email Address" style="text-align: center;"><br>
+			
+			<label for="pass" aria-placeholder="Password"></label><br>
+			<input type="password" id="pass" name="pass" placeholder="Password" style="text-align: center;"><br>
+		  </form> 
+		  <br>
+
+		<!--- Button for user to submit form --->
+		<button class="form-submit" type="button" onclick="validateSignIn();">Sign in</button> 
+		<br>
+
+		<div id="signin-alert" class="alert" style="display: none">
+			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+			Please fill out the required fields.
+		</div> 
+	</div>
+
+	<br>
+
+	<!--- Styled container --->
+	<div class="container" id="signout">
+		<!--- Heading in container --->
+		<h2>
+			Sign out
+		</h2>
+
+		<!--- Button for user to submit form --->
+		<button class="form-submit" type="button" onclick="signOut();">Sign out</button> 
+		<br>
+	</div>
+
+ <!--- For bootstrap --->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
+<!--- Sample footer --->
+<footer>
+    <div class=" foot text-center p-3">
+        © 2021 Copyright
+    </div>
+</footer>
+
+</html>
