@@ -41,5 +41,5 @@
 
 
     <div id='map-canvas'></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT5sQFSQWfpRx7wxo8272u61gvvT14FtE&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
 </html>
