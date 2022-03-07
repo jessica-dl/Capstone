@@ -34,8 +34,14 @@
             }   
           ?>
         </select>
-      </div>  
-      <button id="login" type="submit">Login</button>
+      </div>
+      <button id="login">Home</button>
+
+      <script type="text/javascript">
+          document.getElementById("login").onclick = function () {
+              location.href = "./login/userLogin.html";
+          };
+      </script>
     </div>
 
 

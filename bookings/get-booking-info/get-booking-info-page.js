@@ -42,7 +42,33 @@ function createTable(data) {
     $("#roomtable").html(timetable);
 }
 
+function getCookie(username) {
+    let name = username + "=";
+    let spli = document.cookie.split(';');
+    for(var j = 0; j < spli.length; j++) {
+      let char = spli[j];
+      while (char.charAt(0) == ' ') {
+        char = char.substring(1);
+      }
+      if (char.indexOf(name) == 0) {
+        return char.substring(name.length, char.length);
+      }
+    }
+    return "";
+  }
+
+
+function checkCookie() {
+    var user = getCookie("user");
+    // if user is null reroute to sign in page
+    if (user == "" || user == null) {
+      window.location = "../login/userLogin.html#signin";
+    }
+  }
+
+
 function roomAvailability(roomId) {
+    checkCookie();
     sessionStorage.setItem("building", getBuilding());
     sessionStorage.setItem("room", roomId);
     window.location = "../get-booking-times/get-booking-times-page.html";
