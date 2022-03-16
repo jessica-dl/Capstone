@@ -35,7 +35,7 @@
           ?>
         </select>
       </div>
-      <button id="login">Home</button>
+      <button id="login">Login</button>
 
       <script type="text/javascript">
           document.getElementById("login").onclick = function () {
