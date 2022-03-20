@@ -48,8 +48,8 @@ function createTable(data) {
     var timetable = "<table class='table'>";  
     timetable = timetable  
             + "<thead> <tr>"  
-            + "<th scope='col'>Room</th>" 
-            + "<th scope='col'>Times</th>"    
+            + "<th scope='col'style='text-align:center;'>Room</th>" 
+            + "<th scope='col'style='text-align:center;'>Times</th>"    
             + "</tr> </thead>";  
     var len = data.length;  
     for (var i = 0; i < len; i++) {  

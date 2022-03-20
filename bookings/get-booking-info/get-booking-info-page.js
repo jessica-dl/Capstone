@@ -21,13 +21,17 @@ window.onload=function(){
     showresult();
 }
 
+function redir() {
+  window.location="../../index.php";
+}
+
 function createTable(data) {   
     data = JSON.parse(data["response_data"]);
     var timetable = "<table class='table'>";  
     timetable = timetable  
             + "<thead> <tr>"  
-            + "<th scope='col'>Room</th>" 
-            + "<th scope='col'></th>"    
+            + "<th scope='col' style='text-align:center;'>Room</th>" 
+            + "<th scope='col' style='text-align:center;'>Book</th>"    
             + "</tr> </thead>";  
     var len = data.length;  
     for (var i = 0; i < len; i++) {  

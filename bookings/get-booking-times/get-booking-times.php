@@ -12,7 +12,7 @@ if ($db['status'] == '0') {
 if ($_GET['arguments'] != null) {
     $building = $_GET['arguments'][0];
     $room = $_GET['arguments'][1];
-    $stmt = "SELECT * FROM capstone.booked WHERE `roomID`=" . $room . " AND `buildingName`=" . $building;     
+    $stmt = "SELECT * FROM capstone.booked WHERE `roomID`=" . $room . " AND `buildingName`='" . $building . "'";     
 
     try {
         $i = 0;

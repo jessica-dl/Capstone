@@ -42,7 +42,7 @@ function showMarker() {
         var buildingname = data[i].shortname;
         markers [i] = new google.maps.Marker({
             map: map,
-            url: "http://localhost/Capstone/bookings/get-booking-info/get-booking-info-page.html?name=" + buildingname
+            url: "./bookings/get-booking-info/get-booking-info-page.html?name=" + buildingname
         });
         var la = data[i].latitude;
         var lo = data[i].longitude;
