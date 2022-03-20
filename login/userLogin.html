@@ -30,9 +30,8 @@
 <body>
 	<!--- Bootstrap styling --->
     <div class="jumbotron text-center">
-        <h1></h1>
 	<!--- Creates nav bar with links --->
-    <div class="topnav"> 
+    <div class="topnav" style="background-color:#2374AB"> 
         <a href="../index.php">Home</a>
         <a href="userLogin.html#signin" style="float: right;">Sign in</a>
         <a class="active" href="userLogin.html#signup" style="float: right;">Sign up</a>
@@ -46,24 +45,24 @@
 			Sign up
 		</h2>
 
-		<form id="signup-form" autocomplete="off" class="form-signin needs-validation"> <!--- Creates a form, each of these are input boxes for the user to enter answers --->
+		<form id="signup-form" autocomplete="off" class="form-signin"> <!--- Creates a form, each of these are input boxes for the user to enter answers --->
 			<label for="fname" aria-placeholder="First Name"></label><br>
-			<input type="text" id="fname" name="fname" placeholder="First Name" style="text-align: center;"><br>
+			<input type="text" id="fname" class="form-control" name="fname" placeholder="First Name" style="text-align:center; margin:auto; width:50%;"><br>
 
 			<label for="lname" aria-placeholder="Last Name"></label><br>
-			<input type="text" id="lname" name="lname" placeholder="Last Name" style="text-align: center;"><br>
+			<input type="text" id="lname" class="form-control" name="lname" placeholder="Last Name" style="text-align:center; margin:auto; width:50%;"><br>
 
 			<label for="bday" aria-placeholder="Birthday"></label><br>
-			<input type="date" id="bday" name="bday" placeholder="Birthday" style="text-align: center;"><br>
+			<input type="date" id="bday" class="form-control" name="bday" placeholder="Birthday" style="text-align:center; margin:auto; width:50%;"><br>
 
 			<label for="email" aria-placeholder="Email: abcd@example.com"></label><br>
-			<input type="email" id="email" name="email" placeholder="Email Address" style="text-align: center;"><br>
+			<input type="email" id="email" class="form-control" name="email" placeholder="Email Address" style="text-align: center; margin:auto; width:50%;"><br>
 			
 			<label for="spass" aria-placeholder="Password"></label><br>
-			<input type="password" id="spass" name="spass" placeholder="Password" style="text-align: center;"><br>
+			<input type="password" id="spass" class="form-control" name="spass" placeholder="Password" style="text-align:center; margin:auto; width:50%;"><br>
 
 			<label for="rpass" aria-placeholder="Please re-enter your password"></label><br>
-			<input type="password" id="rpass" name="rpass" placeholder="Re-enter your password" style="text-align: center;"><br>
+			<input type="password" id="rpass" class="form-control" name="rpass" placeholder="Re-enter your password" style="text-align:center; margin:auto; width:50%;"><br>
 		  </form> 
 		  <br> 
 
@@ -93,10 +92,10 @@
 		<!--- Creates a form for the user to fill out --->
 		<form id="signin-form" autocomplete="off" class="form-signin needs-validation">
 			<label for="email-login" aria-placeholder="Email: abcd@example.com"></label><br>
-			<input type="email" id="email-login" name="email-login" placeholder="Email Address" style="text-align: center;"><br>
+			<input type="email" id="email-login" class="form-control" name="email-login" placeholder="Email Address" style="text-align:center; margin:auto; width:50%;"><br>
 			
 			<label for="pass" aria-placeholder="Password"></label><br>
-			<input type="password" id="pass" name="pass" placeholder="Password" style="text-align: center;"><br>
+			<input type="password" id="pass" class="form-control" name="pass" placeholder="Password" style="text-align:center; margin:auto; width:50%;"><br>
 		  </form> 
 		  <br>
 

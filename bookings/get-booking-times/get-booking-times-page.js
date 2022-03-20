@@ -43,6 +43,10 @@ window.onload=function() {
     showresult();
 }
 
+function redir() {
+    window.location = "../../index.php";
+}
+
 function createTable(data) {   
     data = JSON.parse(data["response_data"]);
     var timetable = "<table class='table'>";  
