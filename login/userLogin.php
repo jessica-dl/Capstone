@@ -12,7 +12,7 @@ else {
 
 $database = new Database();
 $db = $database->getConnection();
-$get_user = "SELECT `id`, `email`, `password` FROM `users` WHERE `email` <=> '$email' AND `password` <=> '$password'";
+$get_user = "SELECT `userID`, `email`, `password` FROM `users` WHERE `email` <=> '$email' AND `password` <=> '$password'";
 
 if ($db['status'] == '0') {
     die("Connection failed:" . $db['message']);

@@ -62,18 +62,25 @@ function getCookie(username) {
   }
 
 
-function checkCookie() {
+function loggedIn() {
     var user = getCookie("user");
     // if user is null reroute to sign in page
     if (user == "" || user == null) {
-      window.location = "../login/userLogin.html#signin";
+      return false;
     }
+    return true;
   }
 
 
 function roomAvailability(roomId) {
-    checkCookie();
-    sessionStorage.setItem("building", getBuilding());
-    sessionStorage.setItem("room", roomId);
-    window.location = "../get-booking-times/get-booking-times-page.html";
+    if (loggedIn()) { // CHNAGE BACK TO !logginIn
+      window.location = "../../login/userLogin.html#signin";
+    }
+    else {
+      console.log("checked cookie");
+      sessionStorage.setItem("building", getBuilding());
+      sessionStorage.setItem("room", roomId);
+      window.location = "../get-booking-times/get-booking-times-page.html";
+    }
+    
 }
