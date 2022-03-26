@@ -19,17 +19,33 @@
             <button type="button" id="datesearch" style="float:left; margin-left:10px;" onclick="redir()">
                 HOME
             </button>
-        
-            
+
             <form id="datesearch" style="float:right; margin-right:10px">
                 <input type="date">
                 <input type="submit">
               </form>
               <form id="roomsearch" style="float:right;">
-                <input type="text">
+                <input type="text" placeholder="Enter the roomname ...">
                 <input type="submit">
               </form>
         </div>
+
+        <div id="filter"style="padding: 0 0 10px 10px;">
+            <details>
+                <summary>Filter</summary>
+                <div>
+                    <select id = "roomsize">
+                      <option value = "">--Select Room Size--</option>
+                      <option value = "small">Small (1~3 people)</option>
+                      <option value = "medium">Medium (3~6 people)</option>
+                      <option value = "large">Large (6+ people)</option>
+                    </select>
+                    <label><input type="checkbox" name="whiteboard">Whiteboard</label>
+                    <label><input type="checkbox" name="projector">Projector</label>
+                    <button onclick="filter()">Refresh</button>
+                  </div>
+            </details>
+            </div>
 
         <div id="mainbody">
             <div id="roomtable"></div>

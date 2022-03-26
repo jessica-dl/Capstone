@@ -69,12 +69,20 @@
   }
 
   #login{
+    background-color: #2374AB;
     border: none;
     color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    float: right;
     font-size: 12px;
+    cursor: pointer;
+  }
+
+  .filter{
+    background-color: rgba(255,255,255,0.2);
+    width: 19%;
+    border: none;
     cursor: pointer;
   }
