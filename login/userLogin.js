@@ -15,6 +15,8 @@ function validateSignUp() {
     
     const password = document.getElementById('spass').value;
     data['password'] = password;
+
+    console.log(JSON.stringify(data));
   
     const tos = document.getElementById('tos').checked;
     const valid = validateSignUpForm();
@@ -28,7 +30,7 @@ function validateSignUp() {
         dataType: 'json'})
       .done(function(ret) {
         console.log('Success ', ret);
-        window.location = "../index.html";
+        window.location = "../index.php";
       }) 
       .fail(function(textStatus) {
         console.log('Fail: ', textStatus['responseText']); 
@@ -125,7 +127,7 @@ function validateSignUp() {
         type: "POST",
         url: 'userLogin.php',
         timeout: 20000,
-        data: {arguments: email},
+        data: {arguments: JSON.stringify(formData)},
         dataType: 'json' })
       .done(function(obj) {
         if (!obj.error) {
