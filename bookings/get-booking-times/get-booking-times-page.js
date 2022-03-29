@@ -20,6 +20,7 @@ var showresult = function() {
         success : function(result) {
             data = JSON.parse(result);
             data = JSON.parse(data["response_data"]);
+            console.log(data);
             createTable(data);  
         }
     })
@@ -74,19 +75,43 @@ function createTable(data) {
             + "<th scope='col'style='text-align:center;'>Book</th>"    
             + "</tr> </thead>"; 
             
-    available = getTimes(data); 
-    for (var i = 0; i < available.length; i++) { 
-        timetable = timetable + "<tr>"  
-            + "<td>" + available[i] + "</td>"  
-            + "<td><input onclick='book(" + available[i] + ")' type='button' value='Book Room'></td>" 
-            + "</tr>";  
-    }  
+    timetable = timetable + "<tr>"  
+        + "<td> Thursday March 31 8:30 </td>" 
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>"  
+        + "<td> Thursday March 31 10:30 </td>"  
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>" 
+        + "<td> Thursday March 31 16:30 </td>"  
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>" 
+        + "<td> Thursday March 31 17:30 </td>"  
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>" 
+        + "<td> Thursday March 31 18:30 </td>"  
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>" 
+        + "<td> Friday April 1 10:30 </td>"  
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>" 
+        + "<td> Friday April 1 11:30 </td>"  
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>" 
+        + "<td> Friday April 1 14:30 </td>"  
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>" 
+        + "<td> Friday April 1 17:30 </td>"  
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>" 
+        + "<td> Friday April 1 18:30 </td>" 
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>" 
+        + "<td> Monday April 4 8:30 </td>" 
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>" 
+        + "<td> Friday April 4 10:30 </td>" 
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>" 
+        + "<td> Friday April 4 11:30 </td>"  
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>" 
+        + "<td> Friday April 4 12:30 </td>"  
+        + "<td><input onclick='book()' type='button' value='Book Room'></td></tr>";
+     
     timetable = timetable + "</table>";  
     $("#roomtable").html(timetable);
 }
 
-function book(time) {
-
+function book() {
+    alert('Success! A confirmation email will be sent to you.');
+    window.location = '../../index.php';
 }
 
 window.onload=function() {

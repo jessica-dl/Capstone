@@ -39,7 +39,7 @@ function createTable(data) {
         console.log(row);
         timetable = timetable + "<tr>"  
             + "<td>"+ row["name"] + "</td>"  
-            + "<td><input onclick='roomAvailability(" + row["id"] + ")' type='button' value='Book Room'></td>"  
+            + "<td><input onclick='roomAvailability(" + row["id"] + ")' type='button' value='See Times'></td>"  
             + "</tr>";  
     }  
     timetable = timetable + "</table>";  
